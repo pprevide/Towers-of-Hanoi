@@ -1,0 +1,4 @@
+# Ignore the out directory, which stores build artifacts, except for the jar file
+
+out/production
+!out/artifacts/Towers_jar/*.jar
