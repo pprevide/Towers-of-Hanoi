@@ -10,7 +10,7 @@ The rules of the game can be found at its [Wikipedia page](https://en.wikipedia.
 - A disk eligible to be moved can be placed on top of another stack or along onto a peg different from the one on which it started the move, subject to the next rule.
 - No larger disk can be placed on top of a smaller disc.
 
-The objective of the game is to move all the disks onto another peg.  With three disks, the number of moves required to reach this objective is \[2^{n}-1\].
+The objective of the game is to move all the disks onto another peg.  With three disks, the number of moves required to reach this objective is 2<sup>n</sup>-1.
 
 
 ## Recursion
