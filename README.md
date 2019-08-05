@@ -10,7 +10,7 @@ The rules of the game can be found at its [Wikipedia page](https://en.wikipedia.
 - A disk eligible to be moved can be placed on top of another stack or along onto a peg different from the one on which it started the move, subject to the next rule.
 - No larger disk can be placed on top of a smaller disc.
 
-The objective of the game is to move all the disks onto another peg.  With three disks, the number of moves required to reach this objective is 2<sup>n</sup>-1.
+The objective of the game is to move all the disks onto another peg.  With three disks, the number of moves required to reach this objective for n pegs is 2<sup>n</sup> - 1.
 
 
 ## Recursion
@@ -20,7 +20,7 @@ The Towers of Hanoi game represents a problem that is suitable for a recursive s
 
 ## Usage
 
-To run this project, version 7 or higher of Java is required.  download the jar file located in the out directory of this repository and execute the jar file from the command line as follows:
+To run this project, version 7 or higher of Java is required.  Download the [jar file](https://github.com/pprevide/towers-of-hanoi/tree/master/out/artifacts/Towers_jar) located in the out/artifacts directory of this repository and execute the jar file from the command line as follows:
 
 ```bash
 java --jar Towers.jar
