@@ -3,7 +3,6 @@
  * Towers of Hanoi is a commonly-used example of recursive problem-solving.  The solution to an n-disk problem
  * can be viewed in terms of solving an (n-1)-disk problem.  The move() method of class TowersGame below
  * uses this approach.
- * <p>
  * When run from the command line, the user is asked to indicate the number of disks.
  */
 
@@ -13,7 +12,6 @@ import java.util.Stack;
 class Disk {
 
     private int diskNumber; // higher disk number indicates wider disk
-
     Disk(int number) {
         this.diskNumber = number;
     }
@@ -31,7 +29,7 @@ class Peg {
 
     Peg(String pegName) {
         this.pegName = pegName;
-        pegContents = new Stack<>();
+        this.pegContents = new Stack<>();
     }
 
     void addDisk(Disk a) {
@@ -55,7 +53,7 @@ class Peg {
         }
     }
 
-    public String getName() {
+    String getName() {
         return pegName;
     }
 
@@ -88,8 +86,8 @@ public class TowersGame {
     public TowersGame() {
     }
 
-    public TowersGame(int number) {
-        numberDisks = number;
+    public TowersGame(int numberDisks) {
+        this.numberDisks = numberDisks;
     }
 
     public int getNumberDisks() {
@@ -97,13 +95,14 @@ public class TowersGame {
     }
 
     public void setNumberDisks(int number) {
-        numberDisks = number;
+        this.numberDisks = number;
     }
 
     /* Create the correct number of pegs and add all disks to
      * the source peg.
      */
     public void initializeGame() {
+        printOutputHeader();
         int i = 0;
         while (i < NUMBER_PEGS) {
             pegArray[i] = new Peg(namesOfPegs[i]);
@@ -113,7 +112,7 @@ public class TowersGame {
     }
 
 
-    public void printOutputHeader() {
+    private void printOutputHeader() {
         System.out.printf("%-20s %-20s %n", "Move", "Peg Configuration");
         System.out.printf("%-21s", "");
         int i = 0;
@@ -134,7 +133,7 @@ public class TowersGame {
     }
 
     // for each peg, print the pegs' contents after a move
-    public void displayGameState() {
+    private void displayGameState() {
         int i = 0;
         while (i < NUMBER_PEGS) {
             String next = pegArray[i].pegToString();
@@ -167,7 +166,7 @@ public class TowersGame {
 
     /* gets number of disks from command line argument
      * if no arguments, prompts user for number of disks   */
-    public int readNumberOfDisks(String[] argArray) {
+    private int readNumberOfDisks(String[] argArray) {
         int disks = 0;
         if (argArray.length == 1) {
             try {
@@ -201,7 +200,6 @@ public class TowersGame {
     public static void main(String[] args) {
         TowersGame newGame = new TowersGame();
         newGame.setNumberDisks(newGame.readNumberOfDisks(args));
-        newGame.printOutputHeader();
         newGame.initializeGame();
         newGame.move(newGame.getNumberDisks(), newGame.pegArray[0],
                 newGame.pegArray[2], newGame.pegArray[1]);
